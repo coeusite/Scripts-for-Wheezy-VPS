@@ -56,7 +56,7 @@ ip6tables -A INPUT ! -i lo -d ::1 -j REJECT
 ip6tables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 # Allowing Ping
-ip6tables -A INPUT -p icmp --icmp-type 8 -j ACCEPT
+ip6tables -A INPUT -p ipv6-icmp -j ACCEPT
 
 # Output
 ip6tables -A OUTPUT -j ACCEPT
